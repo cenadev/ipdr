@@ -1,0 +1,7 @@
+.Logo {
+    grid-area: logo;
+    padding: 0px 10px;
+    border-right: 1px solid rgba( 0, 0, 0, .95);
+    display: flex;
+    align-items: center;
+}

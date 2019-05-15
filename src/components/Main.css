@@ -1,0 +1,5 @@
+.Main {
+    padding: 20px;
+    grid-area: content;
+    grid-row: 2;
+}
