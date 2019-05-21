@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import TextField from '@material-ui/core/TextField'
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -7,7 +7,14 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Grid from '@material-ui/core/Grid';
 
+import './Cadastrar.css'
+
 export default function Cadastrar() {
+
+    const [ radioGenderValue, setRadioGenderValue ] = useState();
+    useEffect(() => {
+
+    })
     return (
         <div className="Cadastrar">
             <h2>Ficha de Membro</h2>
@@ -18,17 +25,8 @@ export default function Cadastrar() {
 
                     </Grid>
                     <Grid item xs={4}>
-                        <FormControl component="fieldset" >
-                            <FormLabel component="legend">Gênero</FormLabel>
-                            <RadioGroup
-                                aria-label="Gender"
-                                name="gender1"
-
-                            >
-                                <FormControlLabel value="female" control={<Radio />} label="F" />
-                                <FormControlLabel value="male" control={<Radio />} label="M" />
-                            </RadioGroup>
-                        </FormControl>
+                            <Radio name="gender" value="female" label="F" value="f" />
+                            <Radio name="gender" value="male" label="M" value="m" />
                     </Grid>
                     <Grid item xs={4}>
                         <TextField fullWidth={true} label="Natalidade" margin="normal" variant="outlined" />
@@ -94,6 +92,24 @@ export default function Cadastrar() {
                     <Grid item xs={4}>
                         <TextField label="Email" margin="normal" variant="outlined" />
                     </Grid>
+                    <Grid item xs={4}>
+                        <FormControl component="fieldset" >
+                            <FormLabel component="legend">Estado Cívil</FormLabel>
+                            <RadioGroup
+                                aria-label="Gender"
+                                name="gender1"
+
+                            >
+                                <FormControlLabel value="female" control={<Radio />} label="Solteiro" />
+                                <FormControlLabel value="male" control={<Radio />} label="Separado" />
+                                <FormControlLabel value="female" control={<Radio />} label="Divorciado" />
+                                <FormControlLabel value="male" control={<Radio />} label="Casado" />
+                                <FormControlLabel value="female" control={<Radio />} label="Desquitado" />
+                                <FormControlLabel value="male" control={<Radio />} label="Viúvo" />
+                            </RadioGroup>
+                        </FormControl>
+                    </Grid>
+
                 </Grid>
             </form>
         </div>
